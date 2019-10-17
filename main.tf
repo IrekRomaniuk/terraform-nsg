@@ -4,7 +4,7 @@ data "azurerm_resource_group" "rg" {
 
 data "azurerm_network_security_group" "nsg" {
   name                = "${var.nsg}"
-  resource_group_name = "${data.rg.name}"
+  resource_group_name = "${data.azurerm_resource_group.rg.name}"
 
   security_rule {
     name                       = "${var.rule.name}"
