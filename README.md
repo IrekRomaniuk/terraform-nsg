@@ -1,7 +1,12 @@
-### mkdir nsg; cd nsg
+### Create directory with main.tf module and provider.tf
+
+```
+mkdir nsg; cd nsg
+```
 
 #### cat main.tf
 
+```
 module "aznsg" {
   source = "github.com/IrekRomaniuk/terraform-nsg.git"
 
@@ -19,18 +24,11 @@ module "aznsg" {
     src       = "*"
     dst       = "*"
     }
-
-    tags = {
-    environment           = "prod"
-    creator               = "iromaniuk"
-    creationdate          = "10/17/19"
-    applicationname       = "nsg"
-    version               = "v1"
-    autoshutdown          = "10:00:00"
-    timewindow            = ""
-    }
 }
+```
+
 #### cat provider.tf 
+
 ```
 provider "azurerm" {
   tenant_id=""
@@ -41,8 +39,11 @@ provider "azurerm" {
 }
 ```
 
+#### terraform
+
 terraform init
 terraform get or terraform get -update
 terraform plan
+terraform apply
 
 
