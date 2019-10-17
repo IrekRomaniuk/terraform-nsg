@@ -42,8 +42,11 @@ provider "azurerm" {
 #### terraform
 
 terraform init
+
 terraform get or terraform get -update
+
 terraform plan
+
 terraform apply
 
 
